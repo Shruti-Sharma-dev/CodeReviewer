@@ -7,7 +7,8 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import axios from 'axios'
 import './App.css'
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
   useEffect(() => {
     prism.highlightAll()
+    
   }, [])
 
   async function reviewCode() {
